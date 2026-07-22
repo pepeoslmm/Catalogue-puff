@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Catalogue privé</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="login" class="screen">
+  <div class="card login-card">
+    <div class="logo">CATALOGUE</div>
+    <h1>Accès privé</h1>
+    <p>Entrez votre code d'accès pour consulter le catalogue.</p>
+    <form id="loginForm">
+      <input id="accessCode" type="password" placeholder="Code d'accès" autocomplete="off" required>
+      <button>Accéder</button>
+      <div id="loginError" class="error"></div>
+    </form>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+<header>
+  <div class="brand">CATALOGUE</div>
+  <div class="header-actions">
+    <button class="ghost" id="adminBtn">Administration</button>
+    <button class="ghost" id="logoutBtn">Quitter</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <span class="eyebrow">CATALOGUE PRIVÉ</span>
+      <h1>Produits disponibles</h1>
+      <p>Consultez les produits, les prix et les stocks disponibles.</p>
+    </div>
+    <input id="search" class="search" placeholder="Rechercher un produit…">
+  </section>
+
+  <section id="productGrid" class="grid"></section>
+</main>
+</div>
+
+<div id="adminModal" class="modal hidden">
+  <div class="modal-card">
+    <button class="close" id="closeAdmin">×</button>
+    <h2>Administration</h2>
+    <p class="muted">Modifiez le catalogue localement sur cet appareil.</p>
+    <div id="adminLogin">
+      <input id="adminCode" type="password" placeholder="Code administrateur">
+      <button id="adminLoginBtn">Entrer</button>
+      <div id="adminError" class="error"></div>
+    </div>
+    <div id="adminPanel" class="hidden">
+      <div class="admin-toolbar">
+        <button id="addProduct">+ Ajouter un produit</button>
+        <button class="danger" id="resetProducts">Réinitialiser</button>
+      </div>
+      <div id="adminList"></div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
